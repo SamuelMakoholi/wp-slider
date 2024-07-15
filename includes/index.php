@@ -1,3 +1,3 @@
 <?php
 
-//silene is golden
+//silence is golden
