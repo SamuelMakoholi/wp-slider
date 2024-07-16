@@ -21,12 +21,20 @@ function mkhs_slider_shortcode($atts)
                 <?php while ($slider_query->have_posts()) : $slider_query->the_post(); ?>
                     <div class="item">
                         <?php if (has_post_thumbnail()) : ?>
-                            <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
+                        
+                        <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
+                        <div class="overlay"></div>
+                     
                         <?php else : ?>
+                           
                             <img src="<?php echo plugin_dir_url(__FILE__); ?>../image/img6.png" alt="Default Image">
+                            <div class="overlay"></div>
+                            
                         <?php endif; ?>
+
+
                         <div class="content">
-                            <div class="author"><span class="badge">Feature</span></div>
+                            <div class="author"><span class="badge">Featured</span></div>
                             <div class="title"><?php the_title(); ?></div>
                             <div class="des">
                                 <?php the_excerpt(); ?>
@@ -51,10 +59,18 @@ function mkhs_slider_shortcode($atts)
                 <?php while ($thumbnail_query->have_posts()) : $thumbnail_query->the_post(); ?>
                     <div class="item">
                         <?php if (has_post_thumbnail()) : ?>
+                            
                             <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
+
+                            <div class="overlay"></div>
+                            
                         <?php else : ?>
+                            
                             <img src="<?php echo plugin_dir_url(__FILE__); ?>../image/img6.png" alt="Default Image">
+
+                            <div class="overlay"></div>
                         <?php endif; ?>
+                        
                         <div class="content">
                             <div class="thumbtitle"><?php the_title(); ?></div>
                             <div class="description"><?php the_excerpt(); ?></div>
